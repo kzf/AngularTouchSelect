@@ -1,0 +1,236 @@
+/***
+  Basic page layout
+ ***/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+.container {
+  width: 100%;
+  background: #ebebeb;
+}
+.highlight-text {
+  color: #a42300;
+}
+
+header {
+  
+  margin-bottom: 1em;
+}
+.page-header {
+  padding: 1em 0;
+  background: #de9683;
+}
+  .page-header h1, .page-header h2 {
+    margin: 0;
+  }
+
+section {
+  padding: 1em 0.5em;
+}
+  section.demo {
+    width: 100%;
+    padding: 1em 0;
+    background: #fff;
+    margin-bottom: 20px;
+  }
+
+.demo-row {
+  margin-bottom: 0.5em;
+}
+.angular-source {
+  width: 100%;
+  background: #edf1c8;
+}
+
+.demo-label {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0.5em;
+  padding-right: 0.5em;
+  font-weight: bold;
+}
+.demo-source {
+  display: block;
+  width: 100%;
+  background: #ddafa3;
+  vertical-align: middle;
+}
+  .demo-source pre,
+  .angular-source pre {
+    margin: 0;
+    text-align: left;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    padding: 1em;
+  }
+.demo-example {
+  display: block;
+  width: 100%;
+  padding: 0.5em;
+  vertical-align: middle;
+}
+
+.full-width {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+a {
+  color: #a42300;
+}
+  a:hover, a:focus, a:active {
+    text-decoration: none;
+  }
+
+@media only screen and (min-width: 540px) {
+  .container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  section {
+    padding: 1em 2em;
+  }
+  section.demo {
+    padding: 1em 1em;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  .demo-label {
+    width: 15%;
+    display: inline-block;
+    text-align: right;
+    margin-bottom: 0;
+  }
+  .demo-source {
+    display: inline-block;
+    width: 64%;
+  }
+  .demo-example {
+    display: inline-block;
+    width: 16%;
+  }
+  .full-width {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .angular-source {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+
+.sudoku {
+  width: 315px;
+  margin: 0 auto;
+}
+  .sudoku .tsl-selector {
+    box-sizing: border-box;
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 0;
+  }
+  .sudoku .tsl-selector span {
+    width: 100%;
+    height: 100%;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .sudoku .tsl-options {
+    width: 6em;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+    .sudoku .tsl-options span {
+      display: inline-block;
+      width: 2em;
+      height: 2em;
+      padding: 0;
+      line-height: 2em;
+      border: dashed #fff;
+      border-radius: 0;
+      border-width: 0;
+      box-sizing: border-box;
+    }
+    .sudoku .tsl-options span:nth-child(1) {
+      border-top-left-radius: 5px;
+    }
+    .sudoku .tsl-options span:nth-child(3) {
+      border-top-right-radius: 5px;
+    }
+    .sudoku .tsl-options span:nth-child(7) {
+      border-bottom-left-radius: 5px;
+    }
+    .sudoku .tsl-options span:nth-child(9) {
+      border-bottom-right-radius: 5px;
+    }
+    .sudoku .tsl-options span:nth-child(3n+1), .sudoku .tsl-options span:nth-child(3n+2) {
+      border-right-width: 1px;
+    }
+    .sudoku .tsl-options span:nth-child(-n+6) {
+      border-bottom-width: 1px;
+    }
+
+.sudoku-square {
+  background: transparent;
+  font-size: 90%;
+  border: 0 solid black;
+  border-top-width: 1px;
+  border-left-width: 1px;
+}
+  .sudoku-square.sd-top {
+    border-top-width: 0;
+  }
+  .sudoku-square.sd-left {
+    border-left-width: 0;
+  }
+  .sudoku-square.sd-thick-btm {
+    border-bottom-width: 3px;
+  }
+  .sudoku-square.sd-thick-right {
+    border-right-width: 3px;
+  }
+
+
+@media only screen and (min-width: 620px) {
+  .sudoku {
+    width: 450px;
+  }
+  .sudoku-square {
+    font-size: 120%;
+  }
+  .sudoku .tsl-selector {
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+  }
+}

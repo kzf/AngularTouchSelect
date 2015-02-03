@@ -1,0 +1,135 @@
+// Selector
+
+
+.tsl-selector {
+  position: relative;
+  display: inline-block;
+  padding: 15px;
+  border-radius: 16px;
+  border: 1px solid #999;
+  background-color: #ccc;
+}
+
+.tsl-options {
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+  & span {
+    background: #ccc;
+    padding: 0.4em 0.8em;
+    width: initial;
+    border: solid #999;
+    &.tsl-hover {
+      cursor: pointer;
+      background: #aaa;
+    }
+    &.tsl-disabled {
+      background: #eee;
+      color: #aaa;
+      cursor: default;
+    }
+  }
+  &.tsl-hidden {
+    display: none; 
+  }
+}
+
+/**********************
+  Top and Bottom Styles
+  ***********************/
+.tsl-top span,
+.tsl-bottom span {
+  border-width: 2px 0 2px 2px;
+  &:first-child {
+    border-radius: 10px 0 0 10px;
+  }
+  &:last-child {
+    border-radius: 0 10px 10px 0;
+    border-width: 2px 2px 2px 2px;
+  }
+}
+
+.tsl-top .tsl-options {
+  top: -75%;
+}
+.tsl-bottom .tsl-options {
+  bottom: -75%;
+}
+.tsl-top .tsl-options,
+.tsl-bottom .tsl-options {
+  white-space: nowrap;
+  left: 50%;
+  transform: translateX(-50%);
+  & span {
+    display: inline-block;
+  }
+}
+
+/**********************
+  Left and Right Styles
+  ***********************/
+.tsl-left span,
+.tsl-right span {
+  white-space: nowrap;
+  border-width: 2px 2px 0 2px;
+  &:first-child {
+    border-radius: 10px 10px 0 0;
+  }
+  &:last-child {
+    border-radius: 0 0 10px 10px;
+    border-width: 2px 2px 2px 2px;
+  }
+}
+
+.tsl-left .tsl-options {
+  left: 0;
+  transform: translateY(-50%) translateX(-100%);
+}
+.tsl-right .tsl-options {
+  right: 0;
+  transform: translateY(-50%) translateX(100%);
+}
+.tsl-left .tsl-options,
+.tsl-right .tsl-options {
+  top: 50%;
+  & span {
+    display: block;
+  }
+}
+
+/**********************
+  Center Styles
+  ***********************/
+.tsl-center span {
+  display: block;
+}
+
+.tsl-center .tsl-options {
+  top: 50%;
+  left: 50%;
+}
+
+/**********************
+  Radial Styles
+  ***********************/
+.tsl-radial span {
+  position: absolute;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 2.5em;
+  height: 2.5em;
+  padding: 0;
+  border-radius: 50%;
+}
