@@ -30,7 +30,9 @@ function tslOptionButtonDirective(touchSelectConfig) {
         var transformString = 'translateX(-50%) translateY(-50%) '+
                                'translateX('+$scope.data.position.x+
                                'px) translateY('+$scope.data.position.y+'px)';
-        $scope.positionStyle = 'transform: ' + transformString + '; -webkit-transform: ' + transformString;
+        $scope.positionStyle = 'transform: ' + transformString + 
+                               '; -webkit-transform: ' + transformString +
+                               '; -ms-transform: ' + transformString + ';';
       }
       
       $scope.elementClasses = {};

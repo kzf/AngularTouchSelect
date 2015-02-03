@@ -76,7 +76,9 @@ function tslOptionButtonDirective(touchSelectConfig) {
         var transformString = 'translateX(-50%) translateY(-50%) '+
                                'translateX('+$scope.data.position.x+
                                'px) translateY('+$scope.data.position.y+'px)';
-        $scope.positionStyle = 'transform: ' + transformString + '; -webkit-transform: ' + transformString;
+        $scope.positionStyle = 'transform: ' + transformString + 
+                               '; -webkit-transform: ' + transformString +
+                               '; -ms-transform: ' + transformString + ';';
       }
       
       $scope.elementClasses = {};
@@ -359,6 +361,10 @@ angular.module('touchSelect.services')
 		.factory('radialPosition', function() {
 			var PI = Math.PI;
 
+			var fourDecimalPlaces = function(val) {
+				return Math.round(val*10000)/10000;
+			}
+
 			// Calculate the $n points which are $radius distance from
 			// (0,0) starting at the angle $angle radians (clockwise,
 			// with 0 being the positive x axis), and moving by 
@@ -368,8 +374,8 @@ angular.module('touchSelect.services')
 				var i;
 				for (i = 0; i < n; i++) {
 					positions.push({
-						x: Math.cos(angle)*radius,
-						y: Math.sin(angle)*radius,
+						x: fourDecimalPlaces(Math.cos(angle)*radius),
+						y: fourDecimalPlaces(Math.sin(angle)*radius),
 					});
 					angle += step;
 				}

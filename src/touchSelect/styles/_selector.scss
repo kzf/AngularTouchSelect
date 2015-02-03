@@ -59,6 +59,8 @@
 .tsl-bottom .tsl-options {
   white-space: nowrap;
   left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   & span {
     display: inline-block;
@@ -83,10 +85,14 @@
 
 .tsl-left .tsl-options {
   left: 0;
+  -webkit-transform: translateY(-50%) translateX(-100%);
+  -ms-transform: translateY(-50%) translateX(-100%);
   transform: translateY(-50%) translateX(-100%);
 }
 .tsl-right .tsl-options {
   right: 0;
+  -webkit-transform: translateY(-50%) translateX(100%);
+  -ms-transform: translateY(-50%) translateX(100%);
   transform: translateY(-50%) translateX(100%);
 }
 .tsl-left .tsl-options,
