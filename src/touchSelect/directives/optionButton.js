@@ -9,7 +9,6 @@ function tslOptionButtonDirective(touchSelectConfig) {
     restrict: 'E',
     replace: true,
     template: '<span ng-class="elementClasses" ng-mouseover="mouseoverOption()" ng-mouseout="mouseoutOption()"'+
-              ' style="{{positionStyle}}"'+
               ' ng-mouseup="selectOption()" ng-bind-html="data.text"></span>',
     scope: {
       index: '@optionIndex',
@@ -30,9 +29,9 @@ function tslOptionButtonDirective(touchSelectConfig) {
         var transformString = 'translateX(-50%) translateY(-50%) '+
                                'translateX('+$scope.data.position.x+
                                'px) translateY('+$scope.data.position.y+'px)';
-        $scope.positionStyle = 'transform: ' + transformString + 
-                               '; -webkit-transform: ' + transformString +
-                               '; -ms-transform: ' + transformString + ';';
+        $element.css('-webkit-transform', transformString);
+        $element.css('-ms-transform', transformString);
+        $element.css('transform', transformString);
       }
       
       $scope.elementClasses = {};
